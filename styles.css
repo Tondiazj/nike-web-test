@@ -247,6 +247,14 @@ body {
         padding: 3rem !important;
     }
 
+        /* Hero */
+    .hero-section {
+        /* min-height: 90vh; */
+        background:
+            linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 0%)),
+            url("./images/wallpaper-desktop.png") center / cover no-repeat;
+    }
+
     .navbar-shell {
         top: 0;
         bottom: auto;
