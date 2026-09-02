@@ -41,7 +41,7 @@ body {
     padding: 0.75rem 0;
 }
 
-.burguer {
+.burguer i {
     font-size: 3rem;
     /* line-height: 1; */
 }
