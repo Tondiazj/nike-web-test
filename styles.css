@@ -2,6 +2,13 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Prevent the page itself from moving sideways on touch devices */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+}
+
 body {
     padding-bottom: 10vh;
     font-family: Arial, sans-serif;
