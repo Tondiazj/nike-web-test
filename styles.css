@@ -167,7 +167,7 @@ body {
 }
 
 /* Second slider */
-.logo-slider {
+/* .logo-slider {
     width: 100%;
     overflow: hidden;
 }
@@ -193,6 +193,48 @@ body {
     background: #fff;
     font-size: 1.35rem;
     white-space: nowrap;
+} */
+
+/* @keyframes logo-slide-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+} */
+
+.logo-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.logo-track {
+    --logo-gap: 1rem;
+
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--logo-gap);
+
+    width: max-content;
+
+    animation: logo-slide-left 18s linear infinite;
+}
+
+.logo-card {
+    flex: 0 0 170px;
+
+    width: 170px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff;
+    font-size: 1.35rem;
+    white-space: nowrap;
 }
 
 @keyframes logo-slide-left {
@@ -201,7 +243,9 @@ body {
     }
 
     to {
-        transform: translateX(-50%);
+        transform: translateX(
+            calc(-50% - (var(--logo-gap) / 2))
+        );
     }
 }
 
