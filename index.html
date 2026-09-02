@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nike Web Development Demo</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Responsive navbar:
+         mobile/tablet -> bottom
+         lg+ -> top -->
+    <header class="navbar-shell fixed-bottom bg-dark">
+        <div class="container d-flex justify-content-between align-items-center h-100">
+
+            <a href="#hero" class="d-flex align-items-center h-100">
+                <img src="./images/Logo_NIKE.png" alt="Nike" class="navbar-logo img-fluid">
+            </a>
+
+            <div class="d-flex align-items-center gap-3 h-100">
+
+                <div class="d-none d-lg-flex align-items-center gap-3">
+                    <a href="#" class="btn btn-outline-light rounded-pill fw-bold px-4 py-2">
+                        Hazte socio
+                    </a>
+
+                    <i class="fa-solid fa-circle-user fs-2 text-white" aria-hidden="true"></i>
+                </div>
+
+                <button
+                    class="btn text-white fs-1 border-0 h-100 px-3"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#mainMenu"
+                    aria-controls="mainMenu"
+                    aria-label="Open navigation">
+                    ☰
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Bootstrap offcanvas menu -->
+    <div
+        class="offcanvas offcanvas-start text-bg-dark"
+        tabindex="-1"
+        id="mainMenu"
+        aria-labelledby="mainMenuLabel">
+
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="mainMenuLabel">Menu</h5>
+
+            <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close">
+            </button>
+        </div>
+
+        <div class="offcanvas-body p-0">
+            <nav class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action bg-dark text-white border-secondary py-4"
+                   href="#hero"
+                   data-bs-dismiss="offcanvas">
+                    Inicio
+                </a>
+
+                <a class="list-group-item list-group-item-action bg-dark text-white border-secondary py-4"
+                   href="#just-do-it"
+                   data-bs-dismiss="offcanvas">
+                    Nike: Just Do It
+                </a>
+
+                <a class="list-group-item list-group-item-action bg-dark text-white border-secondary py-4"
+                   href="#collaborators"
+                   data-bs-dismiss="offcanvas">
+                    Colaboradores
+                </a>
+
+                <a class="list-group-item list-group-item-action bg-dark text-white border-secondary py-4"
+                   href="#agenda"
+                   data-bs-dismiss="offcanvas">
+                    Agenda
+                </a>
+
+                <a class="list-group-item list-group-item-action bg-dark text-white border-secondary py-4"
+                   href="#resources"
+                   data-bs-dismiss="offcanvas">
+                    Recursos
+                </a>
+
+                <a class="list-group-item list-group-item-action bg-dark text-white border-secondary py-4"
+                   href="#contact"
+                   data-bs-dismiss="offcanvas">
+                    Contacto
+                </a>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- HERO -->
+    <section id="hero" class="hero-section position-relative overflow-hidden text-white">
+
+        <video id="background-video"
+               class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+               autoplay muted loop playsinline>
+        </video>
+
+        <!-- <div class="position-absolute top-0 start-0 w-100 h-100 bg-black bg-opacity-50"></div> -->
+
+        <div id="above-the-fold" class="position-relative d-flex align-items-center justify-content-center m-5 bg-dark bg-opacity-75 p-3">
+            <div class="text-center w-100">
+
+                <h1 class="display-4 fw-bold mb-5">
+                    Comprometidos con el futuro del deporte y los deportistas de élite
+                </h1>
+
+                <div class="row g-4 justify-content-center">
+
+                    <div class="col-12 col-md-4">
+                        <div class="p-3">
+                            <div class="display-5 fw-bold hero-counter" data-target="60" data-suffix="%">0%</div>
+                            <p class="mb-0">
+                                El 60% de los deportistas de alto nivel confían en nosotros
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <div class="p-3">
+                            <div class="display-5 fw-bold hero-counter" data-target="800000" data-format="es">0</div>
+                            <p class="mb-0">
+                                Generamos alrededor de 800.000 empleos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <div class="p-3">
+                            <div class="display-5 fw-bold hero-counter" data-target="40" data-suffix="%">0%</div>
+                            <p class="mb-0">
+                                El 40% de las competiciones ganadas este año
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SLIDER -->
+    <section id="just-do-it" class="py-5 overflow-hidden">
+        <div class="container">
+            <h2 class="text-danger text-center mb-5 slider-title">NIKE: JUST DO IT</h2>
+        </div>
+
+        <div class="nike-slider position-relative">
+
+            <div class="nike-viewport overflow-hidden">
+                <div class="nike-track d-flex align-items-center" id="nikeTrack">
+
+                    <article class="nike-slide">
+                        <img src="images/slide1.JPG"
+                             class="nike-slide-image"
+                             alt="Slide 1">
+                    </article>
+
+                    <article class="nike-slide">
+                        <img src="images/slide1.JPG"
+                             class="nike-slide-image"
+                             alt="Slide 2">
+                    </article>
+
+                    <article class="nike-slide">
+                        <img src="images/slide1.JPG"
+                             class="nike-slide-image"
+                             alt="Slide 3">
+                    </article>
+
+                </div>
+            </div>
+
+            <button class="btn nike-arrow nike-arrow-left"
+                    type="button"
+                    id="nikePrev"
+                    aria-label="Previous slide">
+                ←
+            </button>
+
+            <button class="btn nike-arrow nike-arrow-right"
+                    type="button"
+                    id="nikeNext"
+                    aria-label="Next slide">
+                →
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- COLLABORATORS -->
+    <section id="collaborators" class="py-5 overflow-hidden">
+        <div class="container">
+            <h2 class="text-danger mb-4 fs-2">Colaboradores</h2>
+        </div>
+
+        <div class="logo-slider">
+            <div class="logo-track">
+
+                <div class="logo-group">
+                    <div class="logo-card border border-danger rounded-3 fw-bold">REPSOL</div>
+                    <div class="logo-card border border-danger rounded-3 fw-bold">RHA</div>
+                    <div class="logo-card border border-danger rounded-3 fw-bold">RLD</div>
+                    <div class="logo-card border border-danger rounded-3 fw-bold">satec</div>
+                    <div class="logo-card border border-danger rounded-3 fw-bold">seta</div>
+                    <div class="logo-card border border-danger rounded-3 fw-bold">SOLTEC</div>
+                </div>
+
+                <!-- Duplicate group makes the loop seamless -->
+                <div class="logo-group" aria-hidden="true">
+                    <div class="logo-card border border-danger rounded-3 fw-bold">REPSOL</div>
+                    <div class="logo-card border border-danger rounded-3 fw-bold">RHA</div>
+                    <div class="logo-card border border-danger rounded-3 fw-bold">RLD</div>
+                    <div class="logo-card border border-danger rounded-3 fw-bold">satec</div>
+                    <div class="logo-card border border-danger rounded-3 fw-bold">seta</div>
+                    <div class="logo-card border border-danger rounded-3 fw-bold">SOLTEC</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- AGENDA -->
+    <section id="agenda" class="py-5">
+        <div class="container">
+
+            <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-4 mb-4">
+                <h2 class="display-5 text-danger mb-0">Agenda</h2>
+
+                <div class="d-flex flex-nowrap flex-lg-wrap gap-2 overflow-auto">
+                    <button class="btn btn-outline-danger rounded-pill fw-bold">Proyectos</button>
+                    <button class="btn btn-outline-danger rounded-pill fw-bold">Eventos</button>
+                    <button class="btn btn-outline-danger rounded-pill fw-bold">Webinars</button>
+                    <button class="btn btn-outline-danger rounded-pill fw-bold">Jornadas</button>
+                    <button class="btn btn-outline-danger rounded-pill fw-bold">Internacionalización</button>
+                </div>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-12 col-lg-6">
+                    <article class="card h-100 border-0 bg-light rounded-4 overflow-hidden">
+                        <img src="images/featured.jpg"
+                             class="card-img-top agenda-featured-image"
+                             alt="People working at computers">
+
+                        <div class="card-body p-4">
+                            <div class="d-flex flex-column flex-md-row justify-content-between gap-2 small fw-bold mb-3">
+                                <span>10 de mayo, 2025</span>
+
+                                <div class="text-danger d-flex gap-3">
+                                    <span>Comunicación</span>
+                                    <span>Comercial</span>
+                                </div>
+                            </div>
+
+                            <h3 class="h4">
+                                Antonio Bonet participa en la mesa redonda de la Universidad Nebrija
+                                sobre la guerra comercial
+                            </h3>
+
+                            <a href="#" class="btn btn-secondary rounded-pill mt-3">
+                                Leer más
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="d-flex flex-column gap-4 h-100">
+
+                        <article class="card border-0 bg-light rounded-4 overflow-hidden flex-grow-1">
+                            <div class="row g-0 h-100">
+                                <div class="col-12 col-md-5">
+                                    <img src="images/card-top.jpg"
+                                         class="w-100 h-100 object-fit-cover"
+                                         alt="Modern university building">
+                                </div>
+
+                                <div class="col-12 col-md-7">
+                                    <div class="card-body p-4">
+                                        <div class="small fw-bold mb-3">
+                                            10 de mayo, 2025
+                                        </div>
+
+                                        <div class="text-danger small fw-bold d-flex gap-3 mb-3">
+                                            <span>Comunicación</span>
+                                            <span>Comercial</span>
+                                        </div>
+
+                                        <h3 class="h5">
+                                            Antonio Bonet participa en la mesa redonda de la Universidad Nebrija...
+                                        </h3>
+
+                                        <a href="#" class="btn btn-secondary rounded-pill mt-3">
+                                            Leer más
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card border-0 bg-light rounded-4 overflow-hidden flex-grow-1">
+                            <div class="row g-0 h-100">
+                                <div class="col-12 col-md-5">
+                                    <img src="images/card-bottom.jpg"
+                                         class="w-100 h-100 object-fit-cover"
+                                         alt="Conference room">
+                                </div>
+
+                                <div class="col-12 col-md-7">
+                                    <div class="card-body p-4">
+                                        <div class="small fw-bold mb-3">
+                                            10 de mayo, 2025
+                                        </div>
+
+                                        <div class="text-danger small fw-bold d-flex gap-3 mb-3">
+                                            <span>Comunicación</span>
+                                            <span>Comercial</span>
+                                        </div>
+
+                                        <h3 class="h5">
+                                            Antonio Bonet participa en la mesa redonda de la Universidad Nebrija...
+                                        </h3>
+
+                                        <a href="#" class="btn btn-secondary rounded-pill mt-3">
+                                            Leer más
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- RESOURCES -->
+    <section id="resources" class="bg-dark py-5">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-12 col-lg-5">
+                    <article class="card border-0 rounded-5 h-100 overflow-hidden">
+                        <img src="images/newsletter.jpg"
+                             class="resource-image m-4 mb-0 rounded-4"
+                             alt="Close-up of a computer keyboard">
+
+                        <div class="card-body text-center d-flex flex-column p-4">
+                            <h2 class="h2">Boletín informativo</h2>
+
+                            <p class="mb-4">
+                                Información estratégica para empresas con vocación internacional
+                            </p>
+
+                            <a href="#" class="btn btn-danger rounded-pill mt-auto align-self-center px-4">
+                                Saber más
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-lg-5">
+                    <article class="card border-0 rounded-5 h-100 overflow-hidden bg-secondary text-white">
+                        <img src="images/magazine.jpg"
+                             class="resource-image m-4 mb-0 rounded-4"
+                             alt="Black and white abstract books">
+
+                        <div class="card-body text-center d-flex flex-column p-4">
+                            <h2 class="h2">Revista electrónica</h2>
+
+                            <p class="mb-4">
+                                Herramientas y conocimientos para impulsar tu expansión internacional
+                            </p>
+
+                            <a href="#" class="btn btn-danger rounded-pill mt-auto align-self-center px-4">
+                                Saber más
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <!-- PARTNERS -->
+    <section class="grey-sections bg-light py-5">
+        <div class="container">
+            <h2 class="text-danger mb-5 fs-2">Patrocinadores</h2>
+
+            <div class="row g-4 align-items-center justify-content-center text-center flex-lg-nowrap">
+
+                <div class="col-6 col-md-4 col-lg">
+                    <img src="images/santander.png" class="partner-logo mx-auto" alt="Santander">
+                </div>
+
+                <div class="col-6 col-md-4 col-lg">
+                    <img src="images/apple.png" class="partner-logo mx-auto" alt="Apple">
+                </div>
+
+                <div class="col-6 col-md-4 col-lg">
+                    <img src="images/cocacola.png" class="partner-logo mx-auto" alt="Coca-Cola">
+                </div>
+
+                <div class="col-6 col-md-4 col-lg">
+                    <img src="images/ico.png" class="partner-logo mx-auto" alt="ICO">
+                </div>
+
+                <div class="col-6 col-md-4 col-lg">
+                    <img src="images/privalia.png" class="partner-logo mx-auto" alt="Privalia">
+                </div>
+
+                <div class="col-6 col-md-4 col-lg">
+                    <img src="images/cesce.png" class="partner-logo mx-auto" alt="CESCE">
+                </div>
+
+                <div class="col-6 col-md-4 col-lg">
+                    <img src="images/idom.png" class="partner-logo mx-auto" alt="IDOM">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer-red bg-danger text-white py-4">
+        <div class="container">
+
+            <div class="row g-4 align-items-center text-center text-lg-start">
+
+                <div class="col-12 col-lg-2">
+                    <img src="images/nike.png" class="footer-logo mx-auto mx-lg-0" alt="Nike">
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="d-flex flex-column flex-lg-row flex-wrap justify-content-center justify-content-lg-start gap-2 gap-lg-4 small">
+                        <span>C/ López de Hoyos, 42 (Glorieta López de Hoyos) 28006 Madrid</span>
+                        <span>+34 91 515 97 64</span>
+                        <a href="mailto:club@clubexportadores.org" class="text-white">
+                            club@clubexportadores.org
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-1">
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="text-white text-decoration-none">in</a>
+                        <a href="#" class="text-white text-decoration-none">𝕏</a>
+                        <a href="#" class="text-white text-decoration-none">▶</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-3">
+                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-end gap-2 gap-sm-3 small">
+                        <a href="#" class="text-white text-decoration-none">Aviso Legal</a>
+                        <a href="#" class="text-white text-decoration-none">Política de Privacidad</a>
+                        <a href="#" class="text-white text-decoration-none">FAQ</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const video = document.getElementById("background-video");
+
+        if (window.matchMedia("(min-width: 992px)").matches) {
+            const source = document.createElement("source");
+            source.src = "./video/1103167727-preview.mp4";
+            source.type = "video/mp4";
+            video.appendChild(source);
+            video.load();
+        }
+    </script>
+
+
+    <script>
+        const nikeTrack = document.getElementById("nikeTrack");
+        const nikeSlides = [...nikeTrack.querySelectorAll(".nike-slide")];
+        const nikePrev = document.getElementById("nikePrev");
+        const nikeNext = document.getElementById("nikeNext");
+
+        let nikeIndex = 1;
+
+        function updateNikeSlider() {
+            nikeSlides.forEach((slide, index) => {
+                slide.classList.toggle("active", index === nikeIndex);
+            });
+
+            const activeSlide = nikeSlides[nikeIndex];
+            const viewport = document.querySelector(".nike-viewport");
+
+            const viewportCenter = viewport.clientWidth / 2;
+            const slideCenter = activeSlide.offsetLeft + activeSlide.offsetWidth / 2;
+
+            nikeTrack.style.transform =
+                `translateX(${viewportCenter - slideCenter}px)`;
+        }
+
+        nikeNext.addEventListener("click", () => {
+            nikeIndex = (nikeIndex + 1) % nikeSlides.length;
+            updateNikeSlider();
+        });
+
+        nikePrev.addEventListener("click", () => {
+            nikeIndex = (nikeIndex - 1 + nikeSlides.length) % nikeSlides.length;
+            updateNikeSlider();
+        });
+
+        window.addEventListener("resize", updateNikeSlider);
+        window.addEventListener("load", updateNikeSlider);
+    </script>
+
+
+    <script>
+        (() => {
+            const offcanvasEl = document.getElementById("mainMenu");
+            if (!offcanvasEl) return;
+
+            let startX = 0;
+            let startY = 0;
+            let tracking = false;
+
+            offcanvasEl.addEventListener("touchstart", (event) => {
+                if (window.innerWidth >= 992) return;
+
+                const touch = event.touches[0];
+                startX = touch.clientX;
+                startY = touch.clientY;
+                tracking = true;
+            }, { passive: true });
+
+            offcanvasEl.addEventListener("touchend", (event) => {
+                if (!tracking || window.innerWidth >= 992) return;
+
+                const touch = event.changedTouches[0];
+                const deltaX = touch.clientX - startX;
+                const deltaY = touch.clientY - startY;
+                tracking = false;
+
+                const horizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
+                const swipedLeft = deltaX < -60;
+
+                if (horizontalSwipe && swipedLeft) {
+                    const instance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+                    instance.hide();
+                }
+            }, { passive: true });
+        })();
+    </script>
+
+
+    <script>
+        (() => {
+            const counters = document.querySelectorAll(".hero-counter");
+            const duration = 1600;
+
+            const formatValue = (counter, value) => {
+                const rounded = Math.round(value);
+
+                if (counter.dataset.format === "es") {
+                    return rounded.toLocaleString("es-ES");
+                }
+
+                return rounded + (counter.dataset.suffix || "");
+            };
+
+            counters.forEach((counter) => {
+                const target = Number(counter.dataset.target);
+                const startTime = performance.now();
+
+                const animate = (now) => {
+                    const progress = Math.min((now - startTime) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+
+                    counter.textContent = formatValue(counter, target * eased);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    }
+                };
+
+                requestAnimationFrame(animate);
+            });
+        })();
+    </script>
+
+</body>
+</html>
