@@ -1014,17 +1014,60 @@
                 renderCard("bottom", data.bottom);
             };
 
-            document.querySelectorAll(".agenda-filter").forEach(button => {
-                button.addEventListener("click", () => {
-                    document.querySelectorAll(".agenda-filter").forEach(other => {
+            const agendaFilters = [...document.querySelectorAll(".agenda-filter")];
+            const agendaCards = [
+                elements.featured.image?.closest("article.card"),
+                elements.top.image?.closest("article.card"),
+                elements.bottom.image?.closest("article.card")
+            ].filter(Boolean);
+
+            let activeAgendaIndex = agendaFilters.findIndex(button => button.classList.contains("active"));
+            let agendaAnimating = false;
+
+            agendaFilters.forEach((button, newIndex) => {
+                button.addEventListener("click", async () => {
+                    if (agendaAnimating || newIndex === activeAgendaIndex) return;
+
+                    agendaAnimating = true;
+                    const forward = newIndex > activeAgendaIndex;
+                    const exitX = forward ? -32 : 32;
+                    const enterX = -exitX;
+
+                    agendaFilters.forEach(other => {
                         other.classList.remove("btn-danger", "active");
                         other.classList.add("btn-outline-danger");
                     });
-
                     button.classList.remove("btn-outline-danger");
                     button.classList.add("btn-danger", "active");
 
+                    await Promise.all(agendaCards.map(card =>
+                        card.animate(
+                            [
+                                { transform: "translateX(0)", opacity: 1 },
+                                { transform: `translateX(${exitX}px)`, opacity: 0 }
+                            ],
+                            { duration: 160, easing: "ease-in", fill: "forwards" }
+                        ).finished
+                    ));
+
                     renderAgenda(button.dataset.category);
+
+                    await Promise.all(agendaCards.map(card =>
+                        card.animate(
+                            [
+                                { transform: `translateX(${enterX}px)`, opacity: 0 },
+                                { transform: "translateX(0)", opacity: 1 }
+                            ],
+                            { duration: 220, easing: "ease-out", fill: "forwards" }
+                        ).finished
+                    ));
+
+                    agendaCards.forEach(card => {
+                        card.getAnimations().forEach(animation => animation.cancel());
+                    });
+
+                    activeAgendaIndex = newIndex;
+                    agendaAnimating = false;
                 });
             });
         })();
