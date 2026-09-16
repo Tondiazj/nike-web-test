@@ -162,6 +162,10 @@ body {
     z-index: 2;
 }
 
+.title-hero{
+    font-size:1.4rem;
+}
+
 
 /* ==========================================================================
    Shared images and section colors
@@ -527,6 +531,9 @@ body {
 
 /* SM: 576px+ */
 @media (min-width: 576px) {
+    .title-hero{
+        font-size:2rem;
+    }
     .nike-track {
         gap: 4vw;
     }
@@ -793,6 +800,11 @@ body {
     #above-the-fold{
         margin: 5% auto!important;
     }
+
+    .title-hero{
+        font-size:3rem;
+    }
+    
 
 
 }
